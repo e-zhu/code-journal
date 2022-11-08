@@ -8,8 +8,10 @@ var data = {
 };
 var storedValue = localStorage.getItem('Code Journal Data');
 var toUpdate = JSON.parse(storedValue);
-data.entries = toUpdate.entries;
-data.nextEntryId = toUpdate.nextEntryId;
+if (storedValue !== null) {
+  data.entries = toUpdate.entries;
+  data.nextEntryId = toUpdate.nextEntryId;
+}
 addEventListener('beforeunload', updateLocalStorage);
 
 // function definition

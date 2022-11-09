@@ -2,6 +2,7 @@ var entryTitle = document.querySelector('#title');
 var photoURL = document.querySelector('#photoURL');
 var entryNotes = document.querySelector('#notes');
 var photo = document.querySelector('img');
+
 photoURL.addEventListener('input', changePhoto);
 
 var formObject = document.querySelector('#entry-form');
@@ -11,7 +12,14 @@ formObject.addEventListener('submit', updateEntry);
 
 function changePhoto(event) {
   var newURL = photoURL.value;
-  photo.src = newURL;
+  var urlArray = newURL.split('.');
+  var fileType = urlArray[urlArray.length - 1].toLowerCase();
+  if (fileType === 'png' || fileType === 'jpg' || fileType === 'jpeg' || fileType === 'gif') {
+    photo.src = newURL;
+  }
+  if (photoURL.value === '') {
+    photo.src = 'images/placeholder-image-square.jpg';
+  }
 }
 
 function updateEntry(event) {

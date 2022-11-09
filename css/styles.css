@@ -36,6 +36,11 @@ input {
   margin-right: 1rem;
 }
 
+input:focus,
+textarea:focus {
+  outline-color: purple;
+}
+
 label {
   margin: 1rem;
   font-size: 20px;

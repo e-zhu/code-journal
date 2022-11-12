@@ -10,6 +10,17 @@ body {
   background-color: purple;
   color: white;
   padding: 1rem;
+  display: flex;
+}
+
+.tab {
+  padding-left: 1rem;
+  cursor: pointer;
+}
+
+#entries-row {
+  justify-content: space-between;
+  align-items: center;
 }
 
 h1 {
@@ -18,6 +29,23 @@ h1 {
 
 h2 {
   margin: 0;
+}
+
+.adjust {
+  margin: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0 0 1rem 1rem;
 }
 
 textarea {
@@ -50,6 +78,7 @@ img {
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 button {
@@ -60,6 +89,7 @@ button {
   background-color: purple;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 #submit-button {

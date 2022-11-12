@@ -6,9 +6,11 @@ var data = {
   editing: null,
   nextEntryId: 1
 };
+
 var storedValue = localStorage.getItem('Code Journal Data');
 var toUpdate = JSON.parse(storedValue);
 if (storedValue !== null) {
+  data.view = toUpdate.view;
   data.entries = toUpdate.entries;
   data.nextEntryId = toUpdate.nextEntryId;
 }

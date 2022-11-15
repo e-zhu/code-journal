@@ -59,19 +59,21 @@ function updateEntry(event) {
 }
 
 function createEntryTree(entry) {
-  var domTree = document.createElement('div');
-  domTree.setAttribute('class', 'row');
+  var listItem = document.createElement('li');
+  var rowItem = document.createElement('div');
+  rowItem.setAttribute('class', 'row');
+  listItem.appendChild(rowItem);
 
   var imgColumn = document.createElement('div');
   imgColumn.setAttribute('class', 'column-half');
-  domTree.appendChild(imgColumn);
+  rowItem.appendChild(imgColumn);
   var entryImage = document.createElement('img');
   entryImage.setAttribute('src', entry.url);
   imgColumn.appendChild(entryImage);
 
   var textColumn = document.createElement('div');
   textColumn.setAttribute('class', 'column-half');
-  domTree.appendChild(textColumn);
+  rowItem.appendChild(textColumn);
   var entryTitle = document.createElement('h2');
   entryTitle.textContent = entry.title;
   entryTitle.setAttribute('class', 'adjust');
@@ -80,7 +82,7 @@ function createEntryTree(entry) {
   entryNotes.textContent = entry.notes;
   textColumn.appendChild(entryNotes);
 
-  return domTree;
+  return listItem;
 }
 
 // view change definitions

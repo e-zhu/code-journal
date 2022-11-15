@@ -2,8 +2,13 @@ body {
   background-color: lightgray;
 }
 
+.container {
+  height: 100vh;
+}
+
 .column-full {
   background-color: #f2f5ff;
+  height: 100%;
 }
 
 .form-header {
@@ -23,6 +28,11 @@ body {
   align-items: center;
 }
 
+#dummy {
+  justify-content: center;
+  display: flex;
+}
+
 h1 {
   padding-left: 1rem;
 }
@@ -36,12 +46,12 @@ h2 {
 }
 
 ul {
-  list-style-type: none;
   padding: 0;
 }
 
 li {
   margin-bottom: 1rem;
+  list-style-type: none;
 }
 
 p {

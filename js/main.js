@@ -15,10 +15,10 @@ formObject.addEventListener('submit', updateEntry);
 
 addEventListener('DOMContentLoaded', event => {
   if (data.entries.length > 0) {
-    var removeList = document.querySelector('ul');
+    var removeList = document.querySelector('#dummy');
     removeList.remove();
   }
-  var base = document.querySelector('#entries');
+  var base = document.querySelector('#list');
   for (var i = 0; i < data.entries.length; i++) {
     var addElement = createEntryTree(data.entries[i]);
     base.appendChild(addElement);

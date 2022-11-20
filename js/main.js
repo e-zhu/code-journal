@@ -44,6 +44,7 @@ function changePhoto(event) {
 }
 
 function updateEntry(event) {
+  event.preventDefault();
   var entry = {};
   entry.title = entryTitle.value;
   entry.url = photoURL.value;
@@ -74,16 +75,26 @@ function createEntryTree(entry) {
   var textColumn = document.createElement('div');
   textColumn.setAttribute('class', 'column-half');
   rowItem.appendChild(textColumn);
+
+  var editRow = document.createElement('div');
+  editRow.setAttribute('class', 'edit-row');
+  textColumn.appendChild(editRow);
   var entryTitle = document.createElement('h2');
   entryTitle.textContent = entry.title;
   entryTitle.setAttribute('class', 'adjust');
-  textColumn.appendChild(entryTitle);
+  editRow.appendChild(entryTitle);
+  var editIcon = document.createElement('i');
+  editIcon.setAttribute('class', 'fa-solid fa-pen'); // <i class="fa-solid fa-pen"></i>
+  editRow.appendChild(editIcon);
+
   var entryNotes = document.createElement('p');
   entryNotes.textContent = entry.notes;
   textColumn.appendChild(entryNotes);
 
   return listItem;
 }
+
+// function editEntry(event) {}
 
 // view change definitions
 
